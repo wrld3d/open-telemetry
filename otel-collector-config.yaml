@@ -1,0 +1,29 @@
+# Source https://docs.datadoghq.com/tracing/setup_overview/open_standards/#ingesting-opentelemetry-traces-with-the-collector
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  batch:
+    timeout: 10s
+
+exporters:
+  datadog/api:
+    service: "${SERVICE_NAME}"
+    env: "${SERVICE_ENV}"
+
+    tags:
+      - "${TAG_SERVICE_PROVIDER}"
+
+    api:
+      key: "${DD_API_KEY}"
+      site: datadoghq.eu
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog/api]

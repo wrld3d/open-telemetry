@@ -1,0 +1,6 @@
+source 'http://rubygems.org'
+ruby '2.5.3'
+
+gem 'opentelemetry-sdk'
+gem 'opentelemetry-exporter-otlp'
+gem 'opentelemetry-instrumentation-all'
