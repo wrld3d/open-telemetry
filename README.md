@@ -30,6 +30,7 @@ which are then used in the configuration file mentioned above
 ```yaml
 - SERVICE_NAME="REPLACE_WITH_SERVICE_OR_APP_NAME"
 - SERVICE_ENV="REPLACE_WITH_SERVICE_OR_APP_ENV"
+- OTEL_EXPORTER_OTLP_ENDPOINT=http://0.0.0.0:4318
 - DD_API_KEY="REPLACE_WITH_REAL_API_KEY"  # <-- necessary when exporting to Datadog
 ```
 
